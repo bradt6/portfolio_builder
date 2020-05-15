@@ -7,9 +7,9 @@ class Service(models.Model):
     name = models.CharField(max_length=63)
     description = models.TextField()
     # slug = models.SlugField(max_length=63, unique=True)
-    slug = AutoSlugField(max_length=63, populate_from=['name'])
+    created_at = models.DateField(auto_now_add=True)
+    slug = AutoSlugField(max_length=63, populate_from=['name'])  
     
-
     # link to image class
     image = models.ForeignKey(Image, on_delete=models.DO_NOTHING)
 

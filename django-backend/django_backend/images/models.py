@@ -7,6 +7,7 @@ class Image(models.Model):
     date = models.DateField()
     image_file = models.ImageField()
     web_alt = models.CharField(max_length=64)
+    created_at = models.DateField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     # slug = models.SlugField(max_length=127)
     slug = AutoSlugField(max_length=127, populate_from=['name'])
