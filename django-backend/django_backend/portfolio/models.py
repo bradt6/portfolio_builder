@@ -7,14 +7,15 @@ class Portfolio(models.Model):
     name = models.CharField(max_length=127)
     description = models.TextField()
     slug = AutoSlugField(max_length=127, unique=True, populate_from=['name'])
-    created_at = models.DateField(auto_now_add=True)
     modified_at = models.DateField(auto_now=True)
-
+    created_at = models.DateField(auto_now_add=True)
 
     # link to images
     images = models.ManyToManyField(Image)
 
-    
 
     def __str__(self):
         return self.name
+
+    def get_images(self):
+        return ", ".join([i.name for i in self.images.all()])

@@ -10,9 +10,7 @@ class Image(models.Model):
     created_at = models.DateField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     # slug = models.SlugField(max_length=127)
-    slug = AutoSlugField(max_length=127, populate_from=['name'])
-
-
-    # Sercices and porfolio linked here
+    slug = AutoSlugField(max_length=127, populate_from=['name']) 
     
+    # Sercices and porfolio linked here 
 

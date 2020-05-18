@@ -6,5 +6,4 @@ from .models import Portfolio
 
 @admin.register(Portfolio)
 class PortfolioAdmin(admin.ModelAdmin):
-
-    list_display = ("name", "description", "images")
+    list_display = ("name", "description", "get_images") 
