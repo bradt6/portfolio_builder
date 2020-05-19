@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from environ import Env
+
+# This is the environ addition
+ENV = Env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -91,17 +95,18 @@ WSGI_APPLICATION = 'django_backend.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'jpt',
-        'USER': 'usertest',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
+# Postgres Config
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'jpt',
+#         'USER': 'usertest',
+#         'PASSWORD': 'password',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+DATABASES = {"default":ENV.db("DATABASE_URL")}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
