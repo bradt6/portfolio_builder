@@ -12,7 +12,6 @@ services:
       - postgres_data_dev:/var/lib/postgresql/data
       - postgres_backup_dev:/backups
 
-
   django:
     init: true
     build:
@@ -26,4 +25,4 @@ services:
     volumes:
       - ./django-backend:/app
 
-    
+
