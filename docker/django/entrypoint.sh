@@ -2,11 +2,11 @@
 
 if [ "$#" = 0 ]
 then
-    python3.7.6 -m pip freeze
+    python3.7 -m pip freeze
 fi
 
 postgres_ready() {
-python3.7.6 << END
+python3.7 << END
 from sys import exit
 from psycopg2 import connect, OperationalError
 try:
