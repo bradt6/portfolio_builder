@@ -15,9 +15,9 @@ class Image(models.Model):
     created_at = models.DateField(auto_now_add=True, db_index=True)
     last_modified = models.DateTimeField(auto_now=True)
     # slug = models.SlugField(max_length=127)
-    slug = AutoSlugField(max_length=127, populate_from=['name']) 
-    url = models.URLField() 
-    # Sercices and porfolio linked here 
+    slug = AutoSlugField(max_length=127, populate_from=['name'])
+    # url = models.URLField()
+    # Sercices and porfolio linked here
 
     def __str__(self):
         return self.name
