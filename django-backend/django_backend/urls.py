@@ -16,15 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from contacts import urls as contacts_url
-from images import urls as image_url
-from portfolio import urls as portfolio_url
-from services import urls as services_urls
+# from contacts import urls as contacts_url
+# from images import urls as image_url
+# from portfolio import urls as portfolio_url
+# from services import urls as services_urls
+
+from contacts.urls import urlpatterns as contacts_url
+from images.urls import urlpatterns as image_url
+from portfolio.urls import urlpatterns as portfolio_url
+from services.urls import urlpatterns as services_urls
+
+api_urls = contacts_url + image_url + portfolio_url + services_urls
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include(image_url)),
-    path("", include(contacts_url)),
-    path("", include(portfolio_url)),
-    path("", include(services_urls)),
+    path('api/v1/', include(api_urls)),
 ]
