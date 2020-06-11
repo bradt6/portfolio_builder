@@ -26,7 +26,10 @@ from images.urls import urlpatterns as image_url
 from portfolio.urls import urlpatterns as portfolio_url
 from services.urls import urlpatterns as services_urls
 
-api_urls = contacts_url + image_url + portfolio_url + services_urls
+from services.routers import urlpatterns as service_router_urls
+from portfolio.routers import urlpatterns as portfolio_router_urls
+
+api_urls = contacts_url + image_url + portfolio_url + services_urls + service_router_urls + portfolio_router_urls
 
 
 urlpatterns = [
