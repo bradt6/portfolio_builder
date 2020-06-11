@@ -17,6 +17,8 @@ class ServiceAPIDetail(RetrieveAPIView):
     serializer_class = ServiceSerializer
     lookup_field = "slug"
 
+# This was changed for the create method. Still trying to get the view working with the viewset
+# and router
 class ServiceAPIList(ListCreateAPIView):
     queryset = Service.objects.all()
     serializer_class =  ServiceSerializer

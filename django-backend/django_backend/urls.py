@@ -29,7 +29,7 @@ from services.urls import urlpatterns as services_urls
 from services.routers import urlpatterns as service_router_urls
 from portfolio.routers import urlpatterns as portfolio_router_urls
 
-api_urls = contacts_url + image_url + portfolio_url + services_urls + service_router_urls + portfolio_router_urls
+api_urls = contacts_url + image_url +  service_router_urls + portfolio_router_urls
 
 
 urlpatterns = [
