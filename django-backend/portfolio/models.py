@@ -19,3 +19,5 @@ class Portfolio(models.Model):
 
     def get_images(self):
         return ", ".join([i.name for i in self.images.all()])
+
+
