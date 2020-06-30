@@ -11,3 +11,4 @@ class PortfolioAPIDetail(RetrieveAPIView):
 class PortfolioAPIList(ListAPIView):
     queryset = Portfolio.objects.all()
     serializer_class = PortfolioSerializer
+    template_name = "portfolio/list.html"
