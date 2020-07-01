@@ -21,3 +21,9 @@ class Portfolio(models.Model):
         return ", ".join([i.name for i in self.images.all()])
 
 
+    def get_absolute_url(self):
+        return reverse(
+            "portfolio-detail"
+        )
+
+

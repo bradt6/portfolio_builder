@@ -21,18 +21,20 @@ from django.urls import path, include
 # from portfolio import urls as portfolio_url
 # from services import urls as services_urls
 
-from contacts.urls import urlpatterns as contacts_url
-from images.urls import urlpatterns as image_url
-from portfolio.urls import urlpatterns as portfolio_url
-from services.urls import urlpatterns as services_urls
+from contacts import urls as contacts_url
+from images import urls as image_url
+from portfolio import urls as portfolio_url
+from services import urls as services_urls
 
 from services.routers import urlpatterns as service_router_urls
 from portfolio.routers import urlpatterns as portfolio_router_urls
 
-api_urls = contacts_url + image_url +  service_router_urls + portfolio_router_urls
+# api_urls = contacts_url + image_url +  service_router_urls + portfolio_router_urls + portfolio_url
+api_urls = service_router_urls + portfolio_router_urls
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(api_urls)),
+    path("", include(portfolio_url)),
 ]

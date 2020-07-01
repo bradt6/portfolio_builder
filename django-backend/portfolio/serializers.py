@@ -9,3 +9,9 @@ class PortfolioSerializer(ModelSerializer):
     class Meta:
         model = Portfolio
         fields = "__all__"
+        extra_kwargs = {
+            "url": {
+                "lookup_field": "slug",
+                "view_name": "api-portfolio-detail",
+            }
+        }
