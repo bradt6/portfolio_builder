@@ -1,6 +1,7 @@
 from django.db import models
 from images.models import Image
 from django_extensions.db.fields import AutoSlugField
+from django.urls import reverse
 import uuid
 
 class Portfolio(models.Model):
@@ -23,7 +24,7 @@ class Portfolio(models.Model):
 
     def get_absolute_url(self):
         return reverse(
-            "portfolio-detail"
+            "portfolio_detail", kwargs={"slug": self.slug}
         )
 
 

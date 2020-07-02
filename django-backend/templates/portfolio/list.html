@@ -1,15 +1,15 @@
 {% extends parent_template|default:"portfolio/base.html" %}
 
-<!-- {% block title %}
-  {{ block.super }} - Blog
+{% block title %}
+  {{ block.super }} - Portfolio 
 {% endblock %}
 
 {% block content %}
-  {% for post in post_list %}
+  {% for portfolio in portfolio_list %}
       <header>
         <h2>
           <a href="{{ portfolio.get_absolute_url }}">
-            {{ portfolio.title|title }}</a>
+            {{ portfolio.name|title }}</a>
         </h2>
       </header>
       <p>{{ portfolio.description|truncatewords:20 }}</p>
@@ -20,4 +20,4 @@
   {% empty %}
     <p><em>No Portfolios Available</em></p>
   {% endfor %}
-{% endblock %} -->
+{% endblock %} 
