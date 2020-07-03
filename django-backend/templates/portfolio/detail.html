@@ -1,0 +1,9 @@
+{% extends parent_template|default:"portfolio/base.html" %}
+
+{% block title %}
+  {{ portfolio.name|title }}
+{% endblock %}
+
+{% block content %}
+    <h2> {{ portfolio.name|title }}</h2>
+{% endblock %}

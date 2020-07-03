@@ -1,0 +1,6 @@
+{% extends parent_template|default:"builder/base.html" %}
+
+
+{%block cdnChoice %}
+    {{ builder.template.cdn_url_path}}
+{% endblock %}

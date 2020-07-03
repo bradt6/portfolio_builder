@@ -3,12 +3,13 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet"
+        {# href = {% block cdnChoice %} {% endblock %} #}
         href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cerulean/bootstrap.min.css">
         <title> {% block title %} {% endblock %}</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            
+            {% block navHeadings %} {% endblock %}   
         </nav>
         <h1>Welcome</h1>
         <button class="btn btn-primary" type="button" name="button">Primary</button>
