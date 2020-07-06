@@ -29,12 +29,15 @@ from services import urls as services_urls
 from services.routers import urlpatterns as service_router_urls
 from portfolio.routers import urlpatterns as portfolio_router_urls
 
+
+from builder import urls as builder_url
+
 # api_urls = contacts_url + image_url +  service_router_urls + portfolio_router_urls + portfolio_url
 api_urls = service_router_urls + portfolio_router_urls
-
+more_urls = portfolio_url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(api_urls)),
-    path("", include(portfolio_url)),
+    path("", include(more_urls)),
 ]

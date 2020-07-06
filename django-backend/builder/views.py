@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from .models import Builder, PageManager, Template
+from .serializers import BuilderSerializer, PageManagerSerializer, TemplateSerializer
 
-# Create your views here.
+from django.views.generic import TemplateView
+
+class HomePageView(TemplateView):
+    template_name = "builder/base.html"
