@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'images.apps.ImagesConfig',
     'contacts.apps.ContactsConfig',
     'address.apps.AddressConfig',
+    'builder.apps.BuilderConfig',
     ]
 
 MIDDLEWARE = [

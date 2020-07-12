@@ -6,7 +6,7 @@ from .models import Builder, PageManager, Template
 
 class TemplateSerializer(ModelSerializer):
     class Meta:
-        model = TemplateSerializer
+        model = Template
         fields = "__all__"
 class PageManagerSerializer(ModelSerializer):
     class Meta:

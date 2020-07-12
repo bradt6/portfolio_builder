@@ -1,15 +1,6 @@
 from django.db import models
 import uuid
 
-# Create your models here
-
-class Builder(models.Model):
-    # templateID = models.CharField(max_length=36)
-    # pageMangerID = models.CharField(max_length=36)
-    
-    template = models.OneToOneField(Template, on_delete=models.CASCADE)
-    pageManager = models.OneToOneField(PageManager, on_delete=models.CASCADE)
-
 class Template(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable = False)
     name = models.CharField(max_length=10)
@@ -23,6 +14,17 @@ class PageManager(models.Model):
     services = models.BooleanField()
     home = models.BooleanField()
     contact = models.BooleanField()
+class Builder(models.Model):
+    # templateID = models.CharField(max_length=36)
+    # pageMangerID = models.CharField(max_length=36)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)   
+    template = models.OneToOneField(Template, on_delete=models.CASCADE)
+    pageManager = models.OneToOneField(PageManager, on_delete=models.CASCADE)
+
+    def get_cdn(self):
+        return template.cdn_url_path
+
+
 
  # class ListCardComponent(models.Model):
      # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
