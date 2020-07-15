@@ -7,5 +7,4 @@ urlpatterns = [
 #    path("portfolio/<str:slug>/", PortfolioAPIDetail.as_view(), name="api-portfolio-detail"),
     path("portfolio/", PortfolioList.as_view(), name="portfolio_list"),
     path("portfolio/<str:slug>/", PortfolioDetail.as_view(), name="portfolio_detail"),
-
 ]

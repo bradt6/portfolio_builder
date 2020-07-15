@@ -22,3 +22,11 @@ class ServiceAPIDetail(RetrieveAPIView):
 class ServiceAPIList(ListCreateAPIView):
     queryset = Service.objects.all()
     serializer_class =  ServiceSerializer
+
+class ServiceListView(ListView):
+    model = Service
+    template_name = "services/list.html"
+
+class ServiceDetailView(DetailView):
+    queryset = Service.objects.all()
+    template_name = "services/detail.html"

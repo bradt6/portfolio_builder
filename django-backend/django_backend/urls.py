@@ -41,4 +41,5 @@ urlpatterns = [
     path('api/v1/', include(api_urls)),
     path("", include(portfolio_url)),
     path("", include(builder_url)),
+    path("", include(services_urls)),
 ]

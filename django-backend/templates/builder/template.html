@@ -2,15 +2,5 @@
 
 
 {% block cdnChoice %}
-    {{ builder.template.cdn_url_path }}
-
-    <p>{{ builder.template.cdn_url_path }}</p>
-    <p>{{ template.cdn_url_path }}</p> 
-    <p>{{ builder.get_cdn }}</p>
-    <p>{{ thelist.0.id }}</p>
-    <p>OUTSIDE</p>
-    {% for portfolio in builder_list %}
-        <p>{{ portfolio.id }}</p>
-        <p>HERE</p>
-    {% endfor %}
+   {{ template_name }}
 {% endblock %}
