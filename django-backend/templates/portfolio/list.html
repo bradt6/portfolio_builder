@@ -1,5 +1,10 @@
 {% extends parent_template|default:"portfolio/base.html" %}
 
+
+{% block cdnChoice %}
+  {% include "builder/template.html" %}
+{% endblock %}
+
 {% block title %}
   {{ block.super }} - Portfolio 
 {% endblock %}

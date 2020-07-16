@@ -2,5 +2,10 @@
 
 
 {% block cdnChoice %}
-   {{ template_name }}
+   {{ template.cdn_url_path }}
+{% endblock %}
+
+{% block content %}
+    {{ pageManagerData }}
+    {{ pageManagerData.portfolio }}
 {% endblock %}
