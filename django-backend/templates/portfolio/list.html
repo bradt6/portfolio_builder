@@ -17,7 +17,9 @@
         <a href="{{ portfolio.get_absolute_url }}">
           Read more…</a>
       </p>
-      <p> {{ portfolio.template }}</p>
+      <p>TEMPLATE</p>
+      <p> {{ portfolio.get_template }}</p>
+      <p> {{ portfolio.get_pageManager}}</p>
   {% empty %}
     <p><em>No Portfolios Available</em></p>
   {% endfor %}

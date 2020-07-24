@@ -25,7 +25,11 @@ class Builder(models.Model):
     #     abstract = True
 
     def get_cdn(self):
-        return template.cdn_url_path
+        return self.template.cdn_url_path
+    
+    def get_default_template(self):
+        return self.template
+
 
 
 
