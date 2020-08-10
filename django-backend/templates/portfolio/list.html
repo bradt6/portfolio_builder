@@ -1,5 +1,9 @@
 {% extends parent_template|default:"portfolio/base.html" %}
 
+{% block cdnChoice %}
+   {{ portfolio.template.cdn_url_path }}
+{% endblock %}
+
 {% block title %}
   {{ block.super }} - Portfolio 
 {% endblock %}
@@ -19,6 +23,7 @@
       </p>
       <p>TEMPLATE</p>
       <p> {{ portfolio.get_template }}</p>
+      <p>HERE</p>
       <p> {{ portfolio.get_pageManager}}</p>
   {% empty %}
     <p><em>No Portfolios Available</em></p>

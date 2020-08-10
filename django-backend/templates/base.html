@@ -1,3 +1,4 @@
+{% load nav_heading %}
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -10,6 +11,8 @@
     <body>
         {% block navHeadings %} {% endblock %}   
         <h1>Welcome</h1>
+        <h1>THIS IS HERE</h1>
+        <p> {% get_theme %}</p>
         <button class="btn btn-primary" type="button" name="button">Primary</button>
         <button class="btn btn-secondary" type="button" name="button">Secondary</button>
         {% block content %} {% endblock %}
