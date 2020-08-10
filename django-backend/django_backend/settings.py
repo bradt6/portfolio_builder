@@ -80,9 +80,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
-            'libraries': {
-                'nav_headings': 'templatetags',
-            },
     },
 ]
 
