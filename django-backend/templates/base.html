@@ -1,9 +1,10 @@
+{% load nav_heading %}
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet"
-        href = "{% block cdnChoice %} {% endblock %}" > 
+        href = "{% get_theme %}"> 
         <!-- href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cerulean/bootstrap.min.css"> -->
         <title> {% block title %} {% endblock %}</title>
     </head>
@@ -12,6 +13,8 @@
         {% block navHeadings %} {% endblock %}   
         <h1>Welcome</h1>
         <h1>THIS IS HERE</h1>
+        <p> {% get_theme %}</p>
+        <p> {%  get_headings %} </p>
         <button class="btn btn-primary" type="button" name="button">Primary</button>
         <button class="btn btn-secondary" type="button" name="button">Secondary</button>
         {% block content %} {% endblock %}
