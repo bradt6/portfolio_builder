@@ -11,6 +11,7 @@
     <body>
         {% include 'builder/nav.html' %}
         {% block navHeadings %} {% endblock %}   
+        {% get_headings_inclusion_tags %}
         <h1>Welcome</h1>
         <h1>THIS IS HERE</h1>
         <p> {% get_theme %}</p>
