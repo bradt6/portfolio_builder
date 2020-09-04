@@ -14,6 +14,7 @@ class PageManager(models.Model):
     services = models.BooleanField(default=False)
     home = models.BooleanField(default=False)
     contact = models.BooleanField(default=False)
+    
 class Builder(models.Model):
     # templateID = models.CharField(max_length=36)
     # pageMangerID = models.CharField(max_length=36)

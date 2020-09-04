@@ -12,7 +12,6 @@ class Portfolio(models.Model):
     slug = AutoSlugField(max_length=127, unique=True, populate_from=['name'])
     modified_at = models.DateField(auto_now=True)
     created_at = models.DateField(auto_now_add=True)
-
     # link to images
     images = models.ManyToManyField(Image, blank=True)
     # link to the builder
