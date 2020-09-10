@@ -9,8 +9,12 @@
 {% endblock %}
 
 {% block content %}
+  <div class="row">
   {% for portfolio in portfolio_list %}
-      <header>
+  
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
         <h2>
           <a href="{{ portfolio.get_absolute_url }}">
             {{ portfolio.name|title }}</a>
@@ -25,7 +29,10 @@
       <p> {{ portfolio.get_template }}</p>
       <p>HERE</p>
       <p> {{ portfolio.get_pageManager}}</p>
+    </div>
+  </div>
   {% empty %}
     <p><em>No Portfolios Available</em></p>
   {% endfor %}
+  </div>
 {% endblock %} 
