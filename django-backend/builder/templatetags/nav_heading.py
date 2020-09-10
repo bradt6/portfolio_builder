@@ -24,6 +24,7 @@ def get_headings_inclusion_tags():
     pageManager_id = pageManager_object[0]['pageManager']
     pageManager_name = PageManager.objects.get(id=pageManager_id)
 
+
     heading_list = []
     if pageManager_name.home:
         heading_list.append("Home")
