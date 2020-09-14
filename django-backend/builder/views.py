@@ -6,6 +6,9 @@ from rest_framework.generics import RetrieveAPIView
 from django.shortcuts import get_object_or_404
 
 
+from services.views import ServiceListView
+
+
 class HomePageView(TemplateView):
     template_name = "builder/template.html"
 
@@ -24,6 +27,8 @@ class HomePageView(TemplateView):
         pageManager_id = pageManager_object[0]['pageManager']
         pageManger_name = PageManager.objects.get(id=pageManager_id)
         context['pageManagerData'] = pageManger_name
+
+        get_service = pageManger_name
 
         return context
 

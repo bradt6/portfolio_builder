@@ -14,8 +14,6 @@ class Portfolio(models.Model):
     created_at = models.DateField(auto_now_add=True)
     # link to images
     images = models.ManyToManyField(Image, blank=True)
-    # link to the builder
-    builder = models.ForeignKey(Builder, on_delete=models.SET_DEFAULT, default=None)
 
     def __str__(self):
         return self.name
@@ -29,11 +27,6 @@ class Portfolio(models.Model):
             "portfolio_detail", kwargs={"slug": self.slug}
         )
     
-    def get_pageManager(self):
-        return self.builder.pageManager
-    
-    def get_template(self):
-        return self.builder.template
 
 
 

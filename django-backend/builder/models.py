@@ -14,6 +14,11 @@ class PageManager(models.Model):
     services = models.BooleanField(default=False)
     home = models.BooleanField(default=False)
     contact = models.BooleanField(default=False)
+
+        # def get_absolute_url(self):
+        # return reverse(
+        #     "portfolio_detail", kwargs={"slug": self.slug}
+        
     
 class Builder(models.Model):
     # templateID = models.CharField(max_length=36)
