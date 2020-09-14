@@ -12,7 +12,7 @@
   <div class="row">
   {% for portfolio in portfolio_list %}
   
-  <div class="card" style="width: 18rem;">
+  <div class="card" >
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
         <h2>
@@ -22,8 +22,7 @@
       </header>
       <p>{{ portfolio.description|truncatewords:20 }}</p>
       <p>
-        <a href="{{ portfolio.get_absolute_url }}">
-          Read more…</a>
+        <a href="{{ portfolio.get_absolute_url }}" class="btn btn-primary"> Read more…</a> 
       </p>
       <p>TEMPLATE</p>
       <p> {{ portfolio.get_template }}</p>
