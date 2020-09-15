@@ -25,6 +25,7 @@ from contacts import urls as contacts_url
 from images import urls as image_url
 from portfolio import urls as portfolio_url
 from services import urls as services_urls
+from about import urls as about_urls
 
 from services.routers import urlpatterns as service_router_urls
 from portfolio.routers import urlpatterns as portfolio_router_urls
@@ -42,4 +43,5 @@ urlpatterns = [
     path("", include(portfolio_url)),
     path("", include(builder_url)),
     path("", include(services_urls)),
+    path("", include(about_urls)), 
 ]

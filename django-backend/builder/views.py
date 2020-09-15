@@ -28,8 +28,6 @@ class HomePageView(TemplateView):
         pageManger_name = PageManager.objects.get(id=pageManager_id)
         context['pageManagerData'] = pageManger_name
 
-        get_service = pageManger_name
-
         return context
 
 class RetreiveAPIDetail(RetrieveAPIView):

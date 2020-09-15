@@ -1,6 +1,33 @@
 from django.db import models
 import uuid
 
+
+
+class BaseNavHeading(models.Model):
+    isActive = models.BooleanField(default=False)
+    icon = models.ImageField(default=None)
+
+    class Meta:
+        abstract = True
+
+class About(BaseNavHeading):
+    name = models.CharField(default = "about", editable=False, max_length=5)
+
+class Portfolio(BaseNavHeading):
+    name = models.CharField(default = "portfolio", editable=False, max_length=10)
+
+class Service(BaseNavHeading):
+    SERVICES = "services"
+    SKILLS = "skills"
+    NAME_CHOICES = [(SERVICES, "Services"),(SKILLS, "Skills")]
+    name = models.CharField(choices= NAME_CHOICES,  default ="service", max_length=10)
+
+class Home(BaseNavHeading):
+    name = models.CharField(default = "home", editable=False, max_length=5)
+
+class Contact(BaseNavHeading):
+    name = models.CharField(default = "contact", editable=False, max_length=10)
+
 class Template(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable = False)
     name = models.CharField(max_length=10)
@@ -15,6 +42,11 @@ class PageManager(models.Model):
     home = models.BooleanField(default=False)
     contact = models.BooleanField(default=False)
 
+
+    #This needs to implement the classes as then there can be a icon asscosiated with the appropiate service. There needs to be
+    # icon for the pageloadout
+
+    # about_link = models.OneToOneField(About, on_delete=models.CASCADE)
         # def get_absolute_url(self):
         # return reverse(
         #     "portfolio_detail", kwargs={"slug": self.slug}
@@ -51,27 +83,3 @@ class HomePageModel(models.Model):
 
 # class detailPageComponent(models.Model):
 
-class BaseNavHeading(models.Model):
-    isActive = models.BooleanField(default=False)
-    icon = models.ImageField(default=None)
-
-    class Meta:
-        abstract = True
-
-class about(BaseNavHeading):
-    name = models.CharField(default = "about", editable=False, max_length=5)
-
-class portfolio(BaseNavHeading):
-    name = models.CharField(default = "portfolio", editable=False, max_length=10)
-
-class service(BaseNavHeading):
-    SERVICES = "services"
-    SKILLS = "skills"
-    NAME_CHOICES = [(SERVICES, "Services"),(SKILLS, "Skills")]
-    name = models.CharField(choices= NAME_CHOICES,  default ="service", max_length=10)
-
-class home(BaseNavHeading):
-    name = models.CharField(default = "home", editable=False, max_length=5)
-
-class contact(BaseNavHeading):
-    name = models.CharField(default = "contact", editable=False, max_length=10)

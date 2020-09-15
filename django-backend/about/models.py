@@ -26,13 +26,14 @@ class AboutPage(models.Model):
     description = models.TextField()
     # This is ABN (AUS) || UK, Europe and USA.
     business_number = models.CharField(max_length=27)
-    #Location Services
+    #Location Services -> This needs to be converted to geoDjango later on for more accurate point to point access and 
+    # richer web app experience
     lat = models.DecimalField(max_digits=10, decimal_places=8)
     lng = models.DecimalField(max_digits=11, decimal_places=8)
     #Contact Number
-    phone_number = PhoneNumberField(blank=None)
+    phone_number = PhoneNumberField(blank=True)
     #openingHours
-    opening_times = models.ManyToManyField(OpeningHours)
+    opening_times = models.ManyToManyField(OpeningHours, blank=True)
     #social media information
     instagram = models.URLField(blank=True)
     linkdin = models.URLField(blank=True)
