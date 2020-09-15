@@ -37,7 +37,11 @@ class Builder(models.Model):
         return self.template
 
 
-
+class HomePageModel(models.Model):
+    banner = models.ImageField()
+    #This should be short. get a quote. Email. Contact today. 
+    call_to_action_text = models.CharField(max_length=27)
+    short_description = models.TextField()
 
  # class ListCardComponent(models.Model):
      # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -46,3 +50,28 @@ class Builder(models.Model):
      # style_cdn = models.URLField()
 
 # class detailPageComponent(models.Model):
+
+class BaseNavHeading(models.Model):
+    isActive = models.BooleanField(default=False)
+    icon = models.ImageField(default=None)
+
+    class Meta:
+        abstract = True
+
+class about(BaseNavHeading):
+    name = models.CharField(default = "about", editable=False, max_length=5)
+
+class portfolio(BaseNavHeading):
+    name = models.CharField(default = "portfolio", editable=False, max_length=10)
+
+class service(BaseNavHeading):
+    SERVICES = "services"
+    SKILLS = "skills"
+    NAME_CHOICES = [(SERVICES, "Services"),(SKILLS, "Skills")]
+    name = models.CharField(choices= NAME_CHOICES,  default ="service", max_length=10)
+
+class home(BaseNavHeading):
+    name = models.CharField(default = "home", editable=False, max_length=5)
+
+class contact(BaseNavHeading):
+    name = models.CharField(default = "contact", editable=False, max_length=10)
