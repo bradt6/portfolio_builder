@@ -20,6 +20,7 @@ class OpeningHours(models.Model):
         unique=True)
     from_hour = models.TimeField()
     to_hour = models.TimeField()
+
 class AboutPage(models.Model):
 
     name_of_bussiness = models.CharField(max_length=27)

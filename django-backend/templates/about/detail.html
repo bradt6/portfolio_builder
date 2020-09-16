@@ -8,8 +8,9 @@
     <h2> {{ name }}</h2>
     <h2> About </h2>
     <p> {{ description|linebreaks }}</p>
-    <p> {{  opening_hours }}</p>
+    <h2>Opening Hours</h2>
     {% for hour in opening_hours.all %}
-        {{ hour.weekday }}
+        {{ hour.get_weekday_display }}
+        {{ hour.from_hour}} - {{ hour.to_hour}}
     {% endfor %}
 {% endblock %}
