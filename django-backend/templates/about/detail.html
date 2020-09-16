@@ -6,4 +6,10 @@
 {% block content %}
     <h2> {{ about_data }}</h2>
     <h2> {{ name }}</h2>
+    <h2> About </h2>
+    <p> {{ description|linebreaks }}</p>
+    <p> {{  opening_hours }}</p>
+    {% for hour in opening_hours.all %}
+        {{ hour.weekday }}
+    {% endfor %}
 {% endblock %}
