@@ -5,5 +5,34 @@
 
 
 {% block content %}
+    <h2>{{ name }}</h2>
+    <div class="contact_information">
+        {% if phone_number %}
+        <h2>Contact Information</h2>
+       <p> Contact Number: {{ phone_number }} </p>
+    </div>
+    {% endif %}
+    {% if opening_hours %}
+    <div class="trading_hours">
+        <h2> Trading Hours </h2>
+        {% for hour in opening_hours.all %}
+            {{ hour.get_weekday_display }}
+            {{ hour.from_hour }} - {{ hour.to_hour }}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if lat and lng %}
+    <div class="location_inforation">
+        <!-- display map here  -->
+    </div>
+    {% endif %}
+    {% if social_accounts %}
+    <div class=social_accounts>
+        {% for account in social_accounts.all %}
+        <!-- THIS SHOULD BE ICON EMBDED WITH A TAG LINK  -->
+            {{ account.get_account_name_display }}
+        {% endfor %}
+    </div>
+    {% endif %}    
 
 {% endblock %}

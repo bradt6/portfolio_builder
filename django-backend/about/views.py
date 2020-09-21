@@ -29,3 +29,5 @@ class ContactUsPage(TemplateView):
         context['opening_hours'] = about_object.opening_times
         context['social_accounts'] = about_object.social_accounts
 
+        return context
+

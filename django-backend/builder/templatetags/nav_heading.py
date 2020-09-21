@@ -27,16 +27,14 @@ def get_headings_inclusion_tags():
 
     heading_list = []
     
-    if pageManager_name.home:
-        heading_list.append(tuple(("home", "home")))
-    if pageManager_name.portfolio:
-        heading_list.append(tuple(("portfolio", "portfolio_list")))
     if pageManager_name.services:
         heading_list.append(tuple(("services", "service-list")))
-    if pageManager_name.contact:
-        heading_list.append(tuple(("contact", "contact")))
+    if pageManager_name.portfolio:
+        heading_list.append(tuple(("portfolio", "portfolio_list")))
     if pageManager_name.about:
         heading_list.append(tuple(("about", "about")))
+    if pageManager_name.contact:
+        heading_list.append(tuple(("contact", "contact")))
 
     return {'heading_list' : heading_list }
      

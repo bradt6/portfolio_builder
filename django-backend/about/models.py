@@ -31,7 +31,7 @@ class OpeningHours(models.Model):
     from_hour = models.TimeField()
     to_hour = models.TimeField()
 
-class socialMediaAccount(models.Model):
+class SocialMediaAccount(models.Model):
     account_name = models.IntegerField(
         choices=SOCIAL_PLATFORM,
         unique=True)
@@ -55,4 +55,4 @@ class AboutPage(models.Model):
     #openingHours
     opening_times = models.ManyToManyField(OpeningHours, blank=True)
     #social media information
-    social_accounts = models.ManyToManyField(socialMediaAccount, blank=True)
+    social_accounts = models.ManyToManyField(SocialMediaAccount, blank=True)
