@@ -1,6 +1,8 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from django.utils.translation import gettext as _
+
+from images.models import Image
 # Create your models here.
 
 WEEKDAYS = [
@@ -13,6 +15,14 @@ WEEKDAYS = [
     (7, _("Sunday")),
  ]
 
+ SOCIAL_PLATFORM = [
+     (1, _("Facebook")),
+     (2, _("Instagram")),
+     (3, _("Twitter")),
+     (4, _("Youtube")), 
+     (5, _("Linkdin")),
+ ]
+
  
 class OpeningHours(models.Model):
     weekday = models.IntegerField(
@@ -21,12 +31,21 @@ class OpeningHours(models.Model):
     from_hour = models.TimeField()
     to_hour = models.TimeField()
 
+class socialMediaAccount(models.Model):
+    account_name = models.IntegerField(
+        choices=SOCIAL_PLATFORM,
+        unique=True)
+    account_url = models.URLField()
+    icon = models.oneToOneField(Image, on_delete=model.CASCADE)
+
 class AboutPage(models.Model):
 
     name_of_bussiness = models.CharField(max_length=27)
     description = models.TextField()
     # This is ABN (AUS) || UK, Europe and USA.
     business_number = models.CharField(max_length=27)
+    #License Number -> this is seperate from business number. Certain trades need this to do jobs over a certain price
+    license_number = models.CharField(max_length=27, blnak=True)
     #Location Services -> This needs to be converted to geoDjango later on for more accurate point to point access and 
     # richer web app experience
     lat = models.DecimalField(max_digits=10, decimal_places=8)
@@ -36,7 +55,4 @@ class AboutPage(models.Model):
     #openingHours
     opening_times = models.ManyToManyField(OpeningHours, blank=True)
     #social media information
-    instagram = models.URLField(blank=True)
-    linkdin = models.URLField(blank=True)
-    twitter = models.URLField(blank=True)
-    youtube = models.URLField(blank=True)
+    social_accounts = models.ManyToManyField(socialMediaAccount, blank=True)

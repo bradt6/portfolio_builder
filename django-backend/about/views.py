@@ -15,3 +15,17 @@ class AboutPageView(TemplateView):
         context['opening_hours'] = about_object.opening_times 
 
         return context
+
+class ContactUsPage(TemplateView):
+    template_name = "contact/base.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        about_object = AboutPage.onjects.get(pk=1)
+        context['name'] = about_object.name_of_bussiness
+        context['lat'] = about_object.lat
+        context['lng'] = about_object.lng
+        context['phone_number'] = about_object.phone_number
+        context['opening_hours'] = about_object.opening_times
+        context['social_accounts'] = about_object.social_accounts
+
