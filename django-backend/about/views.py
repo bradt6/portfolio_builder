@@ -17,11 +17,11 @@ class AboutPageView(TemplateView):
         return context
 
 class ContactUsPage(TemplateView):
-    template_name = "contact/base.html"
+    template_name = "contact_me/base.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        about_object = AboutPage.onjects.get(pk=1)
+        about_object = AboutPage.objects.get(pk=1)
         context['name'] = about_object.name_of_bussiness
         context['lat'] = about_object.lat
         context['lng'] = about_object.lng

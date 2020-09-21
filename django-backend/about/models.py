@@ -15,7 +15,7 @@ WEEKDAYS = [
     (7, _("Sunday")),
  ]
 
- SOCIAL_PLATFORM = [
+SOCIAL_PLATFORM = [
      (1, _("Facebook")),
      (2, _("Instagram")),
      (3, _("Twitter")),
@@ -36,7 +36,7 @@ class socialMediaAccount(models.Model):
         choices=SOCIAL_PLATFORM,
         unique=True)
     account_url = models.URLField()
-    icon = models.oneToOneField(Image, on_delete=model.CASCADE)
+    icon = models.OneToOneField(Image, on_delete=models.CASCADE)
 
 class AboutPage(models.Model):
 
@@ -45,7 +45,7 @@ class AboutPage(models.Model):
     # This is ABN (AUS) || UK, Europe and USA.
     business_number = models.CharField(max_length=27)
     #License Number -> this is seperate from business number. Certain trades need this to do jobs over a certain price
-    license_number = models.CharField(max_length=27, blnak=True)
+    license_number = models.CharField(max_length=27, blank=True)
     #Location Services -> This needs to be converted to geoDjango later on for more accurate point to point access and 
     # richer web app experience
     lat = models.DecimalField(max_digits=10, decimal_places=8)
