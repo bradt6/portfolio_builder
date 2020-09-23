@@ -7,7 +7,8 @@ class Contact(models.Model):
     name = models.CharField(max_length=128)
     email_address = models.EmailField()
     mobile_number = PhoneNumberField()
-    created_at = models.DateField(auto_now_add=True)
+    created_at = models.DateField(auto_now_add=True, editable=False)
+    description_of_job = models.TextField()
 
 
     def __str__(self):

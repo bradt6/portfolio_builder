@@ -5,11 +5,12 @@
 
 
 {% block content %}
-    <h2>{{ name }}</h2>
+    <h1> Contact</h1>
+    <!-- <h2>{{ name }}</h2> -->
     <div class="contact_information">
         {% if phone_number %}
-        <h2>Contact Information</h2>
-       <p> Contact Number: {{ phone_number }} </p>
+        <h2>Direct Contact Information</h2>
+        <p> Contact Number: {{ phone_number }} </p>
     </div>
     {% endif %}
     {% if opening_hours %}
@@ -27,10 +28,10 @@
     </div>
     {% endif %}
     {% if social_accounts %}
+    <h2>Social Accounts</h2>
     <div class=social_accounts>
         {% for account in social_accounts.all %}
-        <!-- THIS SHOULD BE ICON EMBDED WITH A TAG LINK  -->
-            {{ account.get_account_name_display }}
+        <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-5x"></i></a>
         {% endfor %}
     </div>
     {% endif %}    
