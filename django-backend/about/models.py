@@ -20,8 +20,15 @@ SOCIAL_PLATFORM = [
      (2, _("Instagram")),
      (3, _("Twitter")),
      (4, _("Youtube")), 
-     (5, _("Linkdin")),
+     (5, _("Linkedin")),
  ]
+SOCIAL_HTML_TAGS = [
+    "fa fa-facebook",
+    "fa fa-instagram",
+    "fa fa-twitter",
+    "fa fa-youtube", 
+    "fa fa-linkedin"
+]
 
  
 class OpeningHours(models.Model):
@@ -33,10 +40,14 @@ class OpeningHours(models.Model):
 
 class SocialMediaAccount(models.Model):
     account_name = models.IntegerField(
-        choices=SOCIAL_PLATFORM,
-        unique=True)
+        choices=SOCIAL_PLATFORM)
     account_url = models.URLField()
-    icon = models.OneToOneField(Image, on_delete=models.CASCADE)
+    # icon = models.OneToOneField(Image, on_delete=models.CASCADE, blank=True)
+    social_icon = models.CharField(max_length=30, editable=False)
+
+    def save(self, *args, **kwargs):
+        self.social_icon = SOCIAL_HTML_TAGS[int(self.account_name)-1]
+        super(SocialMediaAccount, self).save(*args, **kwargs)
 
 class AboutPage(models.Model):
 

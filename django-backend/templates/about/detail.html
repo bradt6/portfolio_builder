@@ -7,8 +7,11 @@
     <h2> {{ name }}</h2>
     <h2> About </h2>
     <p> {{ description|linebreaks }}</p>
-    <i class="fa fa-twitter-square"></i>
-    <i class="fa fa-twitter fa-5x"></i>
+    {% if social_icons %}
+        {% for account in social_icons.all %}
+        <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-5x"></i></a>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
 
 

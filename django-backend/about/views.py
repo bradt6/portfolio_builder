@@ -13,6 +13,7 @@ class AboutPageView(TemplateView):
         context['name'] = about_object.name_of_bussiness
         context['description'] = about_object.description
         context['opening_hours'] = about_object.opening_times 
+        context['social_icons'] = about_object.social_accounts
 
         return context
 
