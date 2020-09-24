@@ -36,13 +36,27 @@
     </div>
     {% endif %} 
 
-
+    <h2>Contact Us</h2>
     <div class="contact_form_div">
         <form method="POST" class="contact-form">
+            <!-- <legend>Contact Us</legend> -->
             {{ contact_form.as_p }}
-            <p><input type="submit" value="Submit Inquiry"></p>
+            <button type="submit" class="btn btn-primary">Submit Inquiry</button>
             {% csrf_token %}
         </form>
     </div>
+    
+    <!-- <div class="contact_form_div">
+        <form method="POST" class="contact-form">
+            <legend>Contact Us</legend>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+            {{ contact_form.email_address }}
+            <p><input type="submit" value="Submit Inquiry"></p>
+            {% csrf_token %}
+        </form>
+    </div> -->
 
 {% endblock %}
