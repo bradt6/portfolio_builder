@@ -44,4 +44,6 @@ urlpatterns = [
     path("", include(builder_url)),
     path("", include(services_urls)),
     path("", include(about_urls)), 
+    path("", include(contacts_url)), 
+    
 ]
