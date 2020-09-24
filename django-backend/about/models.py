@@ -4,6 +4,9 @@ from django.utils.translation import gettext as _
 
 from images.models import Image
 # Create your models here.
+from contacts.forms import ContactForm
+from contacts.models import Contact
+from django.shortcuts import render
 
 WEEKDAYS = [
     (1, _("Monday")),
@@ -29,6 +32,17 @@ SOCIAL_HTML_TAGS = [
     "fa fa-youtube", 
     "fa fa-linkedin"
 ]
+
+# def contact_create(request):
+#     if request.method =='POST':
+#         contact_form = ContactForm(data=request.POST)
+#         if contact_form.is_valid():
+#             new_contact = contact_form.save()
+#     else:
+#         contact_form = ContactForm()
+#     return render(request, 'contact_me/base.html',  {'new_contact': new_contact, 'contact_form': contact_form})
+        
+
 
  
 class OpeningHours(models.Model):
@@ -67,3 +81,5 @@ class AboutPage(models.Model):
     opening_times = models.ManyToManyField(OpeningHours, blank=True)
     #social media information
     social_accounts = models.ManyToManyField(SocialMediaAccount, blank=True)
+
+

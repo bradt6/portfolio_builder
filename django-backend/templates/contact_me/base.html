@@ -34,6 +34,15 @@
         <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-5x"></i></a>
         {% endfor %}
     </div>
-    {% endif %}    
+    {% endif %} 
+
+
+    <div class="contact_form_div">
+        <form method="POST" class="contact-form">
+            {{ contact_form.as_p }}
+            <p><input type="submit" value="Submit Inquiry"></p>
+            {% csrf_token %}
+        </form>
+    </div>
 
 {% endblock %}
