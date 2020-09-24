@@ -5,46 +5,46 @@
 
 
 {% block content %}
-    <h1> Contact</h1>
-    <!-- <h2>{{ name }}</h2> -->
-    <div class="contact_information">
-        {% if phone_number %}
-        <h2>Direct Contact Information</h2>
-        <p> Contact Number: {{ phone_number }} </p>
-    </div>
-    {% endif %}
-    {% if opening_hours %}
-    <div class="trading_hours">
-        <h2> Trading Hours </h2>
-        {% for hour in opening_hours.all %}
-            {{ hour.get_weekday_display }}
-            {{ hour.from_hour }} - {{ hour.to_hour }}
-        {% endfor %}
-    </div>
-    {% endif %}
-    {% if lat and lng %}
-    <div class="location_inforation">
-        <!-- display map here  -->
-    </div>
-    {% endif %}
-    {% if social_accounts %}
-    <h2>Social Accounts</h2>
-    <div class=social_accounts>
-        {% for account in social_accounts.all %}
-        <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-5x"></i></a>
-        {% endfor %}
-    </div>
-    {% endif %} 
+        <div class="contact_information row ">
+        <!-- <h2>{{ name }}</h2> -->
+            {% if phone_number %}
+            <h2>Direct Contact Information</h2>
+            <p> Contact Number: {{ phone_number }} </p>
+        </div>
+        {% endif %}
+        {% if opening_hours %}
+        <div class="trading_hours row ">
+            <h2> Trading Hours </h2>
+            {% for hour in opening_hours.all %}
+                {{ hour.get_weekday_display }}
+                {{ hour.from_hour }} - {{ hour.to_hour }}
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if lat and lng %}
+        <div class="location_inforation row ">
+            <!-- display map here  -->
+            <h2>Location</h2>
+        </div>
+        {% endif %}
+        {% if social_accounts %}
+        <div class="social_accounts row ">
+            <h2>Social Accounts</h2>
+            {% for account in social_accounts.all %}
+            <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-5x"></i></a>
+            {% endfor %}
+        </div>
+        {% endif %} 
 
-    <h2>Contact Us</h2>
-    <div class="contact_form_div">
-        <form method="POST" class="contact-form">
-            <!-- <legend>Contact Us</legend> -->
-            {{ contact_form.as_p }}
-            <button type="submit" class="btn btn-primary">Submit Inquiry</button>
-            {% csrf_token %}
-        </form>
-    </div>
+        <div class="contact_form_div row ">
+            <h2>Contact Us</h2>
+            <form method="POST" class="contact-form ">
+                <!-- <legend>Contact Us</legend> -->
+                {{ contact_form.as_p }}
+                <button type="submit" class="btn btn-primary ">Submit Inquiry</button>
+                {% csrf_token %}
+            </form>
+        </div>
     
     <!-- <div class="contact_form_div">
         <form method="POST" class="contact-form">
