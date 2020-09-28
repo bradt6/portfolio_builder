@@ -31,6 +31,9 @@ from services.routers import urlpatterns as service_router_urls
 from portfolio.routers import urlpatterns as portfolio_router_urls
 from builder.routers import urlpatterns as builder_router_urls
 
+# THIS IS NOT USED FOR PRODUCTION
+from django.conf.urls.static import static
+from django.conf import settings
 
 from builder import urls as builder_url
 
@@ -47,3 +50,9 @@ urlpatterns = [
     path("", include(contacts_url)), 
     
 ]
+
+# THIS IS NOT USED FOR PRODUCTION
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+    document_root=settings.MEDIA_ROOT)
+
