@@ -5,39 +5,56 @@
 
 
 {% block content %}
-        <div class="contact_information row ">
+    <div class="row">
+        <div class="contact_information">
         <!-- <h2>{{ name }}</h2> -->
             {% if phone_number %}
             <h2>Direct Contact Information</h2>
             <p> Contact Number: {{ phone_number }} </p>
         </div>
+        </div>
         {% endif %}
+
         {% if opening_hours %}
-        <div class="trading_hours row ">
+        <div class="row">
+        <div class="trading_hour">
             <h2> Trading Hours </h2>
             {% for hour in opening_hours.all %}
                 {{ hour.get_weekday_display }}
                 {{ hour.from_hour }} - {{ hour.to_hour }}
             {% endfor %}
         </div>
+        </div>
+
         {% endif %}
         {% if lat and lng %}
-        <div class="location_inforation row ">
+        <div class="row">
+        <div class="location_inforatio">
             <!-- display map here  -->
             <h2>Location</h2>
         </div>
+        </div>
+
         {% endif %}
         {% if social_accounts %}
-        <div class="social_accounts row ">
+        <div class="row">
+        <div class="social_account">
             <h2>Social Accounts</h2>
+            <div class="row">
             {% for account in social_accounts.all %}
+            <div class="col">
             <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-5x"></i></a>
+            </div>
             {% endfor %}
+        </div>
+        </div>
         </div>
         {% endif %} 
 
-        <div class="contact_form_div row ">
+        <div class="row">
+        <div class="contact_form_div">
             <h2>Contact Us</h2>
+            <div class="row">
             <form method="POST" class="contact-form ">
                 <!-- <legend>Contact Us</legend> -->
                 {{ contact_form.as_p }}
@@ -45,7 +62,8 @@
                 {% csrf_token %}
             </form>
         </div>
-    
+        </div>
+        </div>
     <!-- <div class="contact_form_div">
         <form method="POST" class="contact-form">
             <legend>Contact Us</legend>
