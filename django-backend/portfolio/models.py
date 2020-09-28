@@ -20,6 +20,13 @@ class Portfolio(models.Model):
 
     def get_images(self):
         return ", ".join([i.name for i in self.images.all()])
+    
+    def get_thubnail_image(self):
+        all_images = self.images.all()
+        if all_images.exists():
+            return all_images[0]
+        else:
+            return
 
 
     def get_absolute_url(self):

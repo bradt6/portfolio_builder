@@ -4,13 +4,23 @@
 {% endblock %}
 
 {% block content %}
-    <h2> {{ name }}</h2>
+    <div class="row d-flex justify-content-center">
+        <h2> {{ name }}</h2>
+    </div>
+
+    <div class="row d-flex justify-content-center">
     <h2> About </h2>
     <p> {{ description|linebreaks }}</p>
+    </div>
+
     {% if social_icons %}
+    <div class="row justify-content-start">
         {% for account in social_icons.all %}
-        <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-5x"></i></a>
+        <div class="col">
+            <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-3x"></i></a>
+        </div>
         {% endfor %}
+    </div>
     {% endif %}
 {% endblock %}
 

@@ -5,31 +5,33 @@
 
 
 {% block content %}
-    <div class="row">
-        <div class="contact_information">
         <!-- <h2>{{ name }}</h2> -->
             {% if phone_number %}
-            <h2>Direct Contact Information</h2>
-            <p> Contact Number: {{ phone_number }} </p>
-        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="contact_information">
+                <h2>Direct Contact Information</h2>
+                <p> Contact Number: {{ phone_number }} </p>
+            </div>
         </div>
         {% endif %}
 
         {% if opening_hours %}
-        <div class="row">
+        <div class="row d-flex justify-content-center">
         <div class="trading_hour">
             <h2> Trading Hours </h2>
             {% for hour in opening_hours.all %}
+            <div class="row">
                 {{ hour.get_weekday_display }}
                 {{ hour.from_hour }} - {{ hour.to_hour }}
+            </div>
             {% endfor %}
         </div>
         </div>
 
         {% endif %}
         {% if lat and lng %}
-        <div class="row">
-        <div class="location_inforatio">
+        <div class="row d-flex justify-content-center">
+        <div class="location_inforation">
             <!-- display map here  -->
             <h2>Location</h2>
         </div>
@@ -37,13 +39,13 @@
 
         {% endif %}
         {% if social_accounts %}
-        <div class="row">
+        <div class="row d-flex justify-content-center">
         <div class="social_account">
             <h2>Social Accounts</h2>
             <div class="row">
             {% for account in social_accounts.all %}
             <div class="col">
-            <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-5x"></i></a>
+            <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-3x"></i></a>
             </div>
             {% endfor %}
         </div>
@@ -51,17 +53,15 @@
         </div>
         {% endif %} 
 
-        <div class="row">
+        <div class="row d-flex justify-content-center">
         <div class="contact_form_div">
             <h2>Contact Us</h2>
-            <div class="row">
             <form method="POST" class="contact-form ">
                 <!-- <legend>Contact Us</legend> -->
                 {{ contact_form.as_p }}
-                <button type="submit" class="btn btn-primary ">Submit Inquiry</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
                 {% csrf_token %}
             </form>
-        </div>
         </div>
         </div>
     <!-- <div class="contact_form_div">
