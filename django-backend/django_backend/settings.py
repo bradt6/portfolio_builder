@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_extensions',
     'phonenumber_field',
+    'easy_thumbnails',
 
     'services.apps.ServicesConfig',
     'portfolio.apps.PortfolioConfig',
