@@ -15,7 +15,11 @@
   <div class="col">
     <div class="card mb-1">
       <a href="{{ portfolio.get_absolute_url }}"> 
-      <img class="card-img-top" src="{{ portfolio.get_thubnail_image.image_file.url }}" alt="Card image cap">
+      {% load thumbnail %}
+      <!-- <a href="{{ portfolio.get_thubnail_image.image_file.url }}"> -->
+        {% thumbnail portfolio.get_thubnail_image.image_file 300x0 as thumb %}
+      <img class="card-img-top" style="height: 250px; width: 100%; display: block;" src="{{ thumb.url }}" width="{{thumb.width}}" height="{{thumb.height}}" alt="Card image cap">
+      <!-- <img class="card-img-top" style="height: 200px; width: 100%;" src="{% thumbnail portfolio.get_thubnail_image.image_file 300x300 upscale %}" alt="Card image cap"> -->
       <div class="card-body">
           <h2>
             <a href="{{ portfolio.get_absolute_url }}">
