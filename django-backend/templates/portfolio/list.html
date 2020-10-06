@@ -1,11 +1,7 @@
 {% extends parent_template|default:"portfolio/base.html" %}
 
-{% block cdnChoice %}
-   {{ portfolio.template.cdn_url_path }}
-{% endblock %}
-
 {% block title %}
-  {{ block.super }} - Portfolio 
+  {{ block.super }}  Portfolio 
 {% endblock %}
 
 {% block content %}
@@ -38,4 +34,22 @@
     <p><em>No Portfolios Available</em></p>
   {% endfor %}
   </div>
+
+  <script>
+    $(document).ready(function() {
+        // executes when HTML-Document is loaded and DOM is ready
+    console.log("document is ready");
+        
+    
+        $( ".card" ).hover(
+        function() {
+        $(this).addClass('shadow-lg').css('cursor', 'pointer'); 
+        }, function() {
+        $(this).removeClass('shadow-lg');
+        }
+    );
+        
+    // document ready  
+    });
+  </script>
 {% endblock %} 

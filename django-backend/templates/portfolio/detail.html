@@ -8,7 +8,7 @@
 
   <div class="row d-flex justify-content-center">
     <h2> {{ portfolio.name|title }}</h2>
-    <p> {{ portfolio.description|title }}</p>
+    <p> {{ portfolio.description|linebreaks }}</p>
     <!-- <img src="{{ portfolio.get_thubnail_image.image_file.url }}" alt="Card image"> -->
     {% for image in portfolio.images.all %}
       <img src="{{ image.image_file.url }}">
