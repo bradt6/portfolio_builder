@@ -16,7 +16,7 @@
     {% for image in portfolio.images.all %}
     <div class="col-md-4">
       <a href="{{ image.image_file.url }}">
-        <img src="{{ image.image_file.url }}">
+        <img width="100%" height="255" src="{{ image.image_file.url }}">
       </a>
     </div>
     {% endfor %}
