@@ -10,10 +10,18 @@
     <h2> {{ portfolio.name|title }}</h2>
     <p> {{ portfolio.description|linebreaks }}</p>
     <!-- <img src="{{ portfolio.get_thubnail_image.image_file.url }}" alt="Card image"> -->
+    <div class="gallery">
     {% for image in portfolio.images.all %}
-      <img src="{{ image.image_file.url }}">
+      <a href="{{ image.image_file.url }}">
+        <img src="{{ image.image_file.url }}">
+      </a>
     {% endfor %}
+    </div>
 
   </div>
+
+  <script>
+    baguetteBox.run('.gallery');
+  </script>>
 
 {% endblock %}
