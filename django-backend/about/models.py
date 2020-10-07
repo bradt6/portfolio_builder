@@ -81,5 +81,11 @@ class AboutPage(models.Model):
     opening_times = models.ManyToManyField(OpeningHours, blank=True)
     #social media information
     social_accounts = models.ManyToManyField(SocialMediaAccount, blank=True)
-
+    # This is the logo
+    logo= models.ForeignKey(
+               Image,
+               on_delete=models.SET_NULL,
+               null=True,
+               blank=True,
+           )
 

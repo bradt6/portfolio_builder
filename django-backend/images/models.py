@@ -6,7 +6,7 @@ from django.urls import reverse
 #       https://docs.djangoproject.com/en/3.0/ref/files/storage/
 #       https://docs.djangoproject.com/en/3.0/topics/files/
 class Image(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=127)
     date = models.DateField()
     image_file = models.ImageField(upload_to="images")
