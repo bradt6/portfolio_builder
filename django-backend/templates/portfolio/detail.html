@@ -10,14 +10,19 @@
     <h2> {{ portfolio.name|title }}</h2>
     <p> {{ portfolio.description|linebreaks }}</p>
     <!-- <img src="{{ portfolio.get_thubnail_image.image_file.url }}" alt="Card image"> -->
+    <div class="container">
     <div class="gallery">
+    <div class="row">
     {% for image in portfolio.images.all %}
+    <div class="col-md-4">
       <a href="{{ image.image_file.url }}">
         <img src="{{ image.image_file.url }}">
       </a>
+    </div>
     {% endfor %}
     </div>
-
+  </div>
+  </div>
   </div>
 
   <script>
