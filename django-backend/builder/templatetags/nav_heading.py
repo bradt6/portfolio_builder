@@ -1,5 +1,6 @@
 from django import template
 from builder.models import Builder, PageManager, Template
+from about.models import AboutPage
 
 register = template.Library()
 
@@ -24,6 +25,12 @@ def get_headings_inclusion_tags():
     pageManager_id = pageManager_object[0]['pageManager']
     pageManager_name = PageManager.objects.get(id=pageManager_id)
 
+    # aboutPage_object = AboutPage.objects.values('logo')
+    # aboutPage_id = aboutPage_object[0].['id']
+    # aboutPage_logo = AboutPage.objects.get(id=aboutPage_id)
+    aboutPage_logo = AboutPage.objects.all()[0]
+    # aboutPage_logo = AboutPage.objects.values('logo')[0]['logo']
+    # aboutPage_logo = AboutPage.objects.get(id=aboutPage_id)
 
     heading_list = []
     
@@ -36,5 +43,5 @@ def get_headings_inclusion_tags():
     if pageManager_name.contact:
         heading_list.append(tuple(("contact", "contact")))
 
-    return {'heading_list' : heading_list }
+    return {'heading_list' : heading_list, 'aboutPage' : aboutPage_logo }
      

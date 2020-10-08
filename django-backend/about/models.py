@@ -88,3 +88,11 @@ class AboutPage(models.Model):
                blank=True,
            )
 
+
+    def logo_or_home(self):
+        logo = self.logo.all()
+        if logo.exists():
+            return logo[0]
+        else:
+            return "Home"
+
