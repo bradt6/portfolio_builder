@@ -14,12 +14,14 @@
     </div>
 
     {% if social_icons %}
-    <div class="row justify-content-start">
+    <div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
         {% for account in social_icons.all %}
-        <div class="col">
+        <div class="col-md-auto justify-content-center">
             <a href="{{ account.account_url }}"><i class="{{ account.social_icon }} fa-3x"></i></a>
         </div>
         {% endfor %}
+    </div>
     </div>
     {% endif %}
 {% endblock %}

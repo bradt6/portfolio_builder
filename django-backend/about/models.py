@@ -64,7 +64,6 @@ class SocialMediaAccount(models.Model):
         super(SocialMediaAccount, self).save(*args, **kwargs)
 
 class AboutPage(models.Model):
-
     name_of_bussiness = models.CharField(max_length=27)
     description = models.TextField()
     # This is ABN (AUS) || UK, Europe and USA.

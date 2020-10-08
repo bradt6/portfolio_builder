@@ -6,7 +6,7 @@ from django.urls import reverse
 import uuid
 
 class Portfolio(models.Model):
-    id = models.UUIDField(primary_key=True, db_index=True, default=uuid.uuid4, editable=False)
+    # id = models.UUIDField(primary_key=True, db_index=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=127)
     description = models.TextField()
     slug = AutoSlugField(max_length=127, unique=True, populate_from=['name'])

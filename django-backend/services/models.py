@@ -6,7 +6,7 @@ import uuid
 from builder.models import Builder
 
 class Service(models.Model):
-    id = models.UUIDField(primary_key=True, db_index=True, default=uuid.uuid4, editable=False)
+    # id = models.UUIDField(primary_key=True, db_index=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=63)
     description = models.TextField()
     # slug = models.SlugField(max_length=63, unique=True)

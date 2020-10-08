@@ -29,13 +29,13 @@ class Contact(BaseNavHeading):
     name = models.CharField(default = "contact", editable=False, max_length=10)
 
 class Template(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable = False)
+    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable = False)
     name = models.CharField(max_length=10)
     description = models.TextField(default="Cerulean")
     cdn_url_path = models.URLField(default="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cerulean/bootstrap.min.css")
 
 class PageManager(models.Model):
-    id = models.UUIDField(primary_key=True, default = uuid.uuid4, editable=False)
+    # id = models.UUIDField(primary_key=True, default = uuid.uuid4, editable=False)
     about = models.BooleanField(default=False)
     portfolio = models.BooleanField(default=False)
     services = models.BooleanField(default=False)
@@ -55,7 +55,8 @@ class PageManager(models.Model):
 class Builder(models.Model):
     # templateID = models.CharField(max_length=36)
     # pageMangerID = models.CharField(max_length=36)
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)   
+
+    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)   
     template = models.OneToOneField(Template, on_delete=models.CASCADE)
     pageManager = models.OneToOneField(PageManager, on_delete=models.CASCADE)
 
