@@ -50,8 +50,8 @@ def addManyImages(request):
         #         i = i +1
         # else:
         #     print("ERROR")
-    else:
-        form = ImageFormUpload()
+    # else:
+    #     form = ImageFormUpload()
 
     return render(request,'images_templates/admin_template.html')
     # return render(request,'images_templates/admin_template.html', {'image_form': form})
