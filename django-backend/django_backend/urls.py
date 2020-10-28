@@ -48,7 +48,7 @@ urlpatterns = [
     path("", include(services_urls)),
     path("", include(about_urls)), 
     path("", include(contacts_url)), 
-    path("", include(image_url)),
+    # path("", include(image_url)),
     
 ]
 

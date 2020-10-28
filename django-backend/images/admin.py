@@ -10,7 +10,7 @@ from django.conf.urls import url
 from django.shortcuts import render
 from django.template.response import TemplateResponse
 
-from .views import AddManyImages 
+# from .views import AddManyImages 
 
 
     # path('upload-images/', addManyImages, name='upload-images'),
@@ -57,15 +57,12 @@ class ImagesAdmin(admin.ModelAdmin):
         print("In the get URLS METHOD")
         urls = super().get_urls()
         custom_urls = [
-            path('upload-images/', self.admin_site.admin_view(self.addManyImages), name='upload-images'),
+            path('upload-images/', self.admin_site.admin_view(self.addManyImages), name='upload_images'),
         ]
         print(custom_urls)
         return urls + custom_urls
     
     def addManyImages(self, request):
-        # context = dict(
-        #     self.admin_site.each_context(request),
-        # )
         print("Before")
         if request.method == "POST":
             print("HERE")
@@ -81,8 +78,8 @@ class ImagesAdmin(admin.ModelAdmin):
                     image_file=request.FILES.get(f"images{file_num}")
                 )
                 count += 1 
-        # return TemplateResponse(request,'images_templates/admin_template.html')
-        return render(request, 'admin/admin_template.html')
+        return TemplateResponse(request,'images_templates/admin_template.html')
+        # return render(request, 'admin/admin_template.html')
 
 
 admin.site.register(Image, ImagesAdmin)
