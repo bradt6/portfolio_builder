@@ -1,4 +1,5 @@
-{% load static %} {% load i18n %}
+{% load static %} 
+<!-- {% load i18n %} -->
 <!DOCTYPE html>
 <head>
     <!-- THIS IS STATIC LOCAL -->
@@ -63,9 +64,9 @@
 
             $.ajax({
                 type: 'POST',
-                // url: 'upload-images/',
-                // url: "{% url 'admin:upload_images' %}", 
-                url: 'admin/images/image/add/', 
+                url: '{% url "upload-images-trial" %}',
+                // url: '{% url "admin:upload-images" %}',
+                // url: 'admin/images/image/add/', 
                 data: formData,
                 cache: false,
                 processData: false,

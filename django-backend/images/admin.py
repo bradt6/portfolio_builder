@@ -57,7 +57,7 @@ class ImagesAdmin(admin.ModelAdmin):
         print("In the get URLS METHOD")
         urls = super().get_urls()
         custom_urls = [
-            path('upload-images/', self.admin_site.admin_view(self.addManyImages), name='upload_images'),
+            path('upload-images/', self.admin_site.admin_view(self.addManyImages), name='upload-images'),
         ]
         print(custom_urls)
         return urls + custom_urls
@@ -78,8 +78,9 @@ class ImagesAdmin(admin.ModelAdmin):
                     image_file=request.FILES.get(f"images{file_num}")
                 )
                 count += 1 
-        return TemplateResponse(request,'images_templates/admin_template.html')
-        # return render(request, 'admin/admin_template.html')
+        # return TemplateResponse(request,'admin/admin_template.html')
+        # return TemplateResponse(request,'images_templates/admin_template.html')
+        return render(request, 'admin/admin_template.html')
 
 
 admin.site.register(Image, ImagesAdmin)
