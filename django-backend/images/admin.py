@@ -57,7 +57,7 @@ class ImagesAdmin(admin.ModelAdmin):
         print("In the get URLS METHOD")
         urls = super().get_urls()
         custom_urls = [
-            path('upload-images/', self.admin_site.admin_view(self.addManyImages), name='upload-images'),
+            path('admin:upload-images/', self.admin_site.admin_view(self.addManyImages), name='upload-images'),
         ]
         print(custom_urls)
         return urls + custom_urls
