@@ -10,7 +10,7 @@ from .forms import ImageFormUpload, FileFieldForm
 
 from django.contrib.admin import AdminSite 
 from django.views.decorators.cache import never_cache
-
+from django.contrib.admin.views.decorators import staff_member_required
 def image_detail(request, id, slug):
     image = get_object_or_404(Image, id=id, slug=slug)
     return render(request, 'images/images/detail.html',{"section": 'images', "image": image})
@@ -25,16 +25,12 @@ class ImageAPIList(ListAPIView):
     serializer_class = ImageSerializer
 
 # class AddManyImages(AdminSite):
+@staff_member_required
 def addManyImages(request):
-
-    # @never_cache
-    # def index(self, request):
     print("Before")
     if request.method == "POST":
         print("HERE")
         print("REQUEST:", request)
-        # form = FileFieldForm(request.POST or None, request.FILES or None)
-        # images = request.FILES.getlist('images')
         name = request.POST.get('name')
         length = request.POST.get('length')
         print("LENGTH :", length)
@@ -46,19 +42,5 @@ def addManyImages(request):
                 image_file=request.FILES.get(f"images{file_num}")
             )
             count += 1 
-
-        # if form.is_valid():
-        #     i = 0
-        #     for image in images:
-        #         image_name = image.name
-        #         print(image_name)
-        #         image_name = str(i) 
-        #         Image.objects.create(name=image_name, image_file=image)
-        #         i = i +1
-        # else:
-        #     print("ERROR")
-    # else:
-    #     form = ImageFormUpload()
-
     return render(request,'admin/admin_template.html')
         # return render(request,'images_templates/admin_template.html', {'image_form': form})
