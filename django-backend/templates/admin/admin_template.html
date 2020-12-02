@@ -1,7 +1,8 @@
 {% extends "admin/base_site.html" %}
-{% load static %} 
+{% load i18n admin_urls %}
+<!-- {% load static %} 
 {% load admin_urls %}
-{% load i18n %}
+{% load i18n %} -->
 
 {% block content %}
 <!DOCTYPE html>
@@ -68,6 +69,7 @@
 
             $.ajax({
                 type: 'POST',
+                // url: "admin/images/image/add/",
                 data: formData,
                 cache: false,
                 processData: false,
