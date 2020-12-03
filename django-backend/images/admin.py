@@ -30,18 +30,24 @@ class ImageAdminForm(ModelForm):
 
 
 class ImagesAdmin(admin.ModelAdmin):
-    # change_form_template = "admin/admin_template.html"
+    change_form_template = "admin/admin_template.html"
+    # add_form_template = "admin/admin_template.html"
     # form = ImageAdminForm
+    def add_view(self, request, form_url='', extra_context=None):
+        extra_context = extra_context or {}
+        extra_context['your_custom_data'] = self.addManyImages2(request)
+        return super().add_view(request, form_url, extra_context=extra_context)
 
     # def get_dyanmic_info(self):
     #     pass
+    # def add_view(self, request, form_url="admin/admin_template.html", extra_context=None):
+    #     return super(ImagesAdmin, self).add_view(request, form_url="admin/admin_template.html", extra_context=None)
 
     print("IN IMAGESADMIN")
     def get_urls(self):
         urls = super().get_urls()
         my_url = [path('many1/', self.admin_site.admin_view(self.addManyImages2)),
-                  path('many2/', addManyImages),
-                   path('my_view/', self.my_view),]
+                  path('many2/', addManyImages),]
         new_urls = my_url + urls
         print(new_urls)
         return new_urls
