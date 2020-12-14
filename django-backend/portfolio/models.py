@@ -34,6 +34,3 @@ class Portfolio(models.Model):
             "portfolio_detail", kwargs={"slug": self.slug}
         )
     
-
-
-

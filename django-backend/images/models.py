@@ -5,7 +5,7 @@ from django.urls import reverse
 #TODO: Look into File Storage and managing files:
 #       https://docs.djangoproject.com/en/3.0/ref/files/storage/
 #       https://docs.djangoproject.com/en/3.0/topics/files/
-
+from django.utils.html import mark_safe
 
 def create_path(instance, filename):
     return f"images/{instance.name}/{filename}"
@@ -31,3 +31,7 @@ class Image(models.Model):
 
     def get_absolute_url(self):
         return reverse('images:detail', args=[self.id, self.slug])
+
+    def image_tag(self):
+            return mark_safe('<img href="{0}" src="{0}" width="150" height="150" />'.format(self.image_file.url))
+    
