@@ -1,0 +1,200 @@
+[
+    {
+        "model": "builder.template",
+        "pk": 1,
+        "fields": {
+            "name" : "Cerulean",
+            "description": "Cerulean",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cerulean/bootstrap.min.css"
+        }
+    },
+    {
+        "model": "builder.template",
+        "pk": 2,
+        "fields": {
+            "name" : "Cosmo",
+            "description": "Cosmo",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cosmo/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 3,
+        "fields": {
+            "name" : "Cyborg",
+            "description": "Cyborg",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cyborg/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 4,
+        "fields": {
+            "name" : "Darkly",
+            "description": "Darkly",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css"
+        }
+ }, 
+    {
+        "model": "builder.template",
+        "pk": 5,
+        "fields": {
+            "name" : "Flatly",
+            "description": "Flatly",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/flatly/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 6,
+        "fields": {
+            "name" : "Journal",
+            "description": "Journal",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/journal/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 7,
+        "fields": {
+            "name" : "Litera",
+            "description": "Litera",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/litera/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 8,
+        "fields": {
+            "name" : "Lumen",
+            "description": "Lumen",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lumen/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 9,
+        "fields": {
+            "name" : "Lux",
+            "description": "Lux",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 10,
+        "fields": {
+            "name" : "Materia",
+            "description": "Materia",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/materia/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 11,
+        "fields": {
+            "name" : "Minty",
+            "description": "Minty",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/minty/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 12,
+        "fields": {
+            "name" : "Pulse",
+            "description": "Pulse",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/pulse/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 13,
+        "fields": {
+            "name" : "Pulse",
+            "description": "Pulse",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/pulse/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 14,
+        "fields": {
+            "name" : "Sandstone",
+            "description": "Sandstone",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/sandstone/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 15,
+        "fields": {
+            "name" : "Simplex",
+            "description": "Simplex",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/simplex/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 16,
+        "fields": {
+            "name" : "Sketchy",
+            "description": "Sketchy",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/sketchy/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 17,
+        "fields": {
+            "name" : "Slate",
+            "description": "Slate",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/slate/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 18,
+        "fields": {
+            "name" : "Solar",
+            "description": "Solar",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/solar/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 19,
+        "fields": {
+            "name" : "Spacelab",
+            "description": "Spacelab",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/spacelab/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 20,
+        "fields": {
+            "name" : "Superhero",
+            "description": "Superhero",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/superhero/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 21,
+        "fields": {
+            "name" : "United",
+            "description": "United",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/united/bootstrap.min.css"
+        }
+    }, 
+    {
+        "model": "builder.template",
+        "pk": 22,
+        "fields": {
+            "name" : "Yeti",
+            "description": "Yeti",
+            "cdn_url_path": "https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/yeti/bootstrap.min.css"
+        }
+    } 
+]
