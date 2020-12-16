@@ -31,8 +31,8 @@ class Contact(BaseNavHeading):
 class Template(models.Model):
     # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable = False)
     name = models.CharField(max_length=10)
-    description = models.TextField(default="Cerulean")
-    cdn_url_path = models.URLField(default="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cerulean/bootstrap.min.css")
+    description = models.TextField()
+    cdn_url_path = models.URLField()
 
 class PageManager(models.Model):
     # id = models.UUIDField(primary_key=True, default = uuid.uuid4, editable=False)

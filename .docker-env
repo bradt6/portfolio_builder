@@ -1,5 +1,5 @@
 POSTGRES_DB=webdev21videos2
-POSTGRES_PASSWORD=AWK3OREN0vb9
+POSTGRES_PASSWORD=bnjh3Uwl0VXv
 POSTGRES_USER=webdev21videos2_user
-DATABASE_URL=postgres://webdev21videos2_user:AWK3OREN0vb9@postgres:5432/webdev21videos2
-SECRET_KEY=9oIaF9iTRo04ytLB0N63Aa2zYsLQ8rWtLyTrpiFp38N0gF1hQM
+DATABASE_URL=postgres://webdev21videos2_user:bnjh3Uwl0VXv@postgres:5432/webdev21videos2
+SECRET_KEY=9JGFVjTMBOYKS3lMyZKwVqW4JEzAb5CLDSsyeA3uioBBBxfoOn
