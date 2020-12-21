@@ -11,7 +11,7 @@ from images.models import Image
 @admin.register(Portfolio)
 class PortfolioAdmin(admin.ModelAdmin):
     # change_form_template = "admin/admin_portfolio_images.html"
-    list_display = ("name", "description", "get_images")
+    list_display = ("name", "description")
     # # inlines = [
     # #     ImageInline,
     # # ]

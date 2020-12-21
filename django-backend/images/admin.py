@@ -19,6 +19,9 @@ from django.utils.safestring import mark_safe
 
 from django.forms import ModelForm
 
+from django.http.response import JsonResponse
+
+
 # def upload_images():
 #     url = reverse('image:upload-images')
 #     return mark_safe(f'<a href="{url}">View</a>')
@@ -64,6 +67,7 @@ class ImagesAdmin(admin.ModelAdmin):
                 )
                 count += 1 
         print("IN THIS SECTION")
+        # return TemplateResponse(request,'admin/admin_template.html')
         return TemplateResponse(request,'admin/admin_template.html')
 
 admin.site.register(Image, ImagesAdmin)
