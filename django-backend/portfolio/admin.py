@@ -3,7 +3,6 @@ from django.contrib import admin
 from .models import Portfolio
 
 from images.models import Image
-# admin.site.register(Portfolio)
 
 # class ImageInline(admin.TabularInline):
 #     model = Image
@@ -25,3 +24,4 @@ class PortfolioAdmin(admin.ModelAdmin):
     #     extra_context = extra_context or {}
     #     extra_context['your_custom_data'] = self.get_images_for_gallery
     #     return super().add_view(request, form_url, extra_context=extra_context)
+

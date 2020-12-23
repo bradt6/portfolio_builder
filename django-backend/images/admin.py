@@ -50,7 +50,9 @@ class ImagesAdmin(admin.ModelAdmin):
         return new_urls
 
     def addManyImages2(self, request):
-        print("Before")
+        print("ENTERING METHOD HERE")
+        # if request.method == "GET":
+        #     return TemplateResponse(request,'admin/admin_template.html') 
         
         if request.method == "POST":
             print("HERE")
@@ -62,12 +64,16 @@ class ImagesAdmin(admin.ModelAdmin):
             count = 0
             for file_num in range(0, int(length)):
                 Image.objects.create(
-                    name=f"{name}{count}",
+                    name=f"{name}_{count}",
                     image_file=request.FILES.get(f"images{file_num}")
                 )
+                # return JsonResponse({'name': Image.name,
+                #                     'image_file': Image.image_file})
                 count += 1 
         print("IN THIS SECTION")
-        # return TemplateResponse(request,'admin/admin_template.html')
         return TemplateResponse(request,'admin/admin_template.html')
+        
+
+
 
 admin.site.register(Image, ImagesAdmin)
