@@ -4,16 +4,17 @@ from .models import Portfolio
 
 from images.models import Image
 
-# class ImageInline(admin.TabularInline):
-#     model = Image
+class ImageInline(admin.TabularInline):
+    model = Image
 
 @admin.register(Portfolio)
 class PortfolioAdmin(admin.ModelAdmin):
     # change_form_template = "admin/admin_portfolio_images.html"
     list_display = ("name", "description")
-    # # inlines = [
-    # #     ImageInline,
-    # # ]
+
+    inlines = [
+        ImageInline,
+    ]
 
     # def get_images_for_gallery(self):
     #     queryset = Image.objects.order_by('-created_at').values()[:20]
