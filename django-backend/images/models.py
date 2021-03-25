@@ -6,25 +6,29 @@ from django.urls import reverse
 #       https://docs.djangoproject.com/en/3.0/ref/files/storage/
 #       https://docs.djangoproject.com/en/3.0/topics/files/
 from django.utils.html import mark_safe
+from portfolio.models import Portfolio
+from services.models import Service
 
 def create_path(instance, filename):
     return f"images/{instance.name}/{filename}"
 
-class Image(models.Model):
-    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class ServicesImage(models.Model):
     name = models.CharField(max_length=127)
-
-    # image_file = models.ImageField(upload_to=create_path)
-    image_file = models.ImageField(upload_to="images/")
-
-    # Could this be integrated with openCV for ai auto complete
-    # web_alt = models.CharField(max_length=64)
+    image_file = models.ImageField(upload_to="images/services/")
     created_at = models.DateField(auto_now_add=True, db_index=True)
     last_modified = models.DateTimeField(auto_now=True)
-    # slug = models.SlugField(max_length=127)
     slug = AutoSlugField(max_length=127, populate_from=['name'])
-    # url = models.URLField()
-    # Sercices and porfolio linked here
+    service = models.ForeignKey(Service, related_name="images")
+
+    def get_thumbnail(self):
+        return self.images.filter(default=True).first()
+class PortfolioImage(models.Model):
+    name = models.CharField(max_length=127)
+    image_file = models.ImageField(upload_to="images/portfolio/")
+    created_at = models.DateField(auto_now_add=True, db_index=True)
+    last_modified = models.DateTimeField(auto_now=True)
+    slug = AutoSlugField(max_length=127, populate_from=['name'])
+    portfolio = models.ForeignKey(Portfolio, related_name="images")
 
     def __str__(self):
         return self.name
@@ -35,3 +39,5 @@ class Image(models.Model):
     def image_tag(self):
             return mark_safe('<img href="{0}" src="{0}" width="150" height="150" />'.format(self.image_file.url))
     
+    def get_thumbnail(self):
+        return self.images.filter(default=True).first()
