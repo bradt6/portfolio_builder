@@ -12,16 +12,16 @@ from services.models import Service
 def create_path(instance, filename):
     return f"images/{instance.name}/{filename}"
 
-class ServicesImage(models.Model):
-    name = models.CharField(max_length=127)
-    image_file = models.ImageField(upload_to="images/services/")
-    created_at = models.DateField(auto_now_add=True, db_index=True)
-    last_modified = models.DateTimeField(auto_now=True)
-    slug = AutoSlugField(max_length=127, populate_from=['name'])
-    service = models.ForeignKey(Service, related_name="images")
+# class ServicesImage(models.Model):
+#     name = models.CharField(max_length=127)
+#     image_file = models.ImageField(upload_to="images/services/")
+#     created_at = models.DateField(auto_now_add=True, db_index=True)
+#     last_modified = models.DateTimeField(auto_now=True)
+#     slug = AutoSlugField(max_length=127, populate_from=['name'])
+#     service = models.ForeignKey(Service, related_name="images")
 
-    def get_thumbnail(self):
-        return self.images.filter(default=True).first()
+#     def get_thumbnail(self):
+#         return self.images.filter(default=True).first()
 class PortfolioImage(models.Model):
     name = models.CharField(max_length=127)
     image_file = models.ImageField(upload_to="images/portfolio/")

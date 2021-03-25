@@ -9,6 +9,7 @@ class Service(models.Model):
     description = models.TextField()
     created_at = models.DateField(auto_now_add=True)
     slug = AutoSlugField(max_length=63, populate_from=['name'])
+    image = models.ImageField(upload_to="images/services/")
 
     def __str__(self):
         return self.name
