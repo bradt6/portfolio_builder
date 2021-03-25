@@ -2,10 +2,10 @@ from django.contrib import admin
 
 from .models import Portfolio
 
-from images.models import Image
+from images.models import PortfolioImage 
 
 class ImageInline(admin.TabularInline):
-    model = Image
+    model = PortfolioImage
 
 @admin.register(Portfolio)
 class PortfolioAdmin(admin.ModelAdmin):

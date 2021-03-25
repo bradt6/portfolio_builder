@@ -1,6 +1,6 @@
 from rest_framework.generics import (ListAPIView, RetrieveAPIView)
 
-from .models import Image
+from .models import PortfolioImage
 from .serializers import ImageSerializer
 from django.shortcuts import get_object_or_404, render
 
@@ -16,16 +16,16 @@ from django.http.response import JsonResponse
 
 
 def image_detail(request, id, slug):
-    image = get_object_or_404(Image, id=id, slug=slug)
-    return render(request, 'images/images/detail.html',{"section": 'images', "image": image})
+    PortfolioImage = get_object_or_404(PortfolioImage, id=id, slug=slug)
+    return render(request, 'images/images/detail.html',{"section": 'images', "PortfolioImage": PortfolioImage})
 
 class ImageAPIDetail(RetrieveAPIView):
-    queryset = Image.objects.all()
+    queryset = PortfolioImage.objects.all()
     serializer_class = ImageSerializer
     lookup_field = "slug"
 
 class ImageAPIList(ListAPIView):
-    queryset = Image.objects.all()
+    queryset = PortfolioImage.objects.all()
     serializer_class = ImageSerializer
 
 # class AddManyImages(AdminSite):
@@ -41,7 +41,7 @@ def addManyImages(request):
 
         count = 0
         for file_num in range(0, int(length)):
-            Image.objects.create(
+            PortfolioImage.objects.create(
                 name=f"{name}{count}",
                 image_file=request.FILES.get(f"images{file_num}")
             )
@@ -64,7 +64,7 @@ def add_images_via_json(self, request):
             name=f"{name}_{count}"
             image_file = request.Files.get(f"images{file_num}")
             
-            image_object = Image()
+            image_object = PortfolioImage()
             image_object.name = name
             image_object.image_file = image_file
             image_object.save()

@@ -1,10 +1,10 @@
 from django.forms import ModelForm, Form, FileField, ClearableFileInput
-from .models import Image
+from .models import PortfolioImage
 
 
 class ImageFormUpload(ModelForm):
     class Meta:
-        model = Image
+        model = PortfolioImage
         fields = ["name"]
 
 class FileFieldForm(ImageFormUpload):

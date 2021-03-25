@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
     'images.apps.ImagesConfig',
     'contacts.apps.ContactsConfig',
-    'address.apps.AddressConfig',
     'builder.apps.BuilderConfig',
     'about.apps.AboutConfig',
 

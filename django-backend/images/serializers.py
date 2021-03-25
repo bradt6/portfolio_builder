@@ -1,14 +1,14 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Image
+from .models import PortfolioImage
 
 class ImageSerializer(ModelSerializer):
 
     class Meta:
-        model = Image
+        model = PortfolioImage
         fields = "__all__"
        # extra_kwargs = {
        #     "url" : {
        #         "lookup_field": "slug",
-       #         "view-name": "api-image-detail"
+       #         "view-name": "api-PortfolioImage-detail"
        #     }
        # }

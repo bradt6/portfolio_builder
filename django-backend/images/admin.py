@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Image
+from .models import PortfolioImage
 
 from django.contrib.admin import sites
 
@@ -24,12 +24,12 @@ from django.http import HttpResponseRedirect
 
 
 # def upload_images():
-#     url = reverse('image:upload-images')
+#     url = reverse('PortfolioImage:upload-images')
 #     return mark_safe(f'<a href="{url}">View</a>')
 
 class ImageAdminForm(ModelForm):
     class Meta:
-        model = Image
+        model = PortfolioImage
         fields = ["name"]
 
 
@@ -64,12 +64,12 @@ class ImagesAdmin(admin.ModelAdmin):
 
             count = 0
             for file_num in range(0, int(length)):
-                Image.objects.create(
+                PortfolioImage.objects.create(
                     name=f"{name}_{count}",
                     image_file=request.FILES.get(f"images{file_num}")
                 )
-                # return JsonResponse({'name': Image.name,
-                #                     'image_file': Image.image_file})
+                # return JsonResponse({'name': PortfolioImage.name,
+                #                     'image_file': PortfolioImage.image_file})
                 count += 1 
             print("IN THIS SECTION")
         # return TemplateResponse(request,'admin/admin_template.html')
@@ -93,7 +93,7 @@ class ImagesAdmin(admin.ModelAdmin):
                 image_name=f"{name}_{count}"
                 image_file = request.FILES.get(f"images{file_num}")
                 
-                image_object = Image()
+                image_object = PortfolioImage()
                 image_object.name = image_name 
                 image_object.image_file = image_file
                 image_object.save()
@@ -119,4 +119,4 @@ class ImagesAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(Image, ImagesAdmin)
+admin.site.register(PortfolioImage, ImagesAdmin)

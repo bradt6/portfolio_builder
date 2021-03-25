@@ -28,7 +28,7 @@ class PortfolioImage(models.Model):
     created_at = models.DateField(auto_now_add=True, db_index=True)
     last_modified = models.DateTimeField(auto_now=True)
     slug = AutoSlugField(max_length=127, populate_from=['name'])
-    portfolio = models.ForeignKey(Portfolio, related_name="images")
+    portfolio = models.ForeignKey(Portfolio, related_name="images", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

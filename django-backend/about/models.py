@@ -2,7 +2,6 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from django.utils.translation import gettext as _
 
-from images.models import Image
 # Create your models here.
 from contacts.forms import ContactForm
 from contacts.models import Contact
@@ -81,12 +80,7 @@ class AboutPage(models.Model):
     #social media information
     social_accounts = models.ManyToManyField(SocialMediaAccount, blank=True)
     # This is the logo
-    logo= models.ForeignKey(
-               Image,
-               on_delete=models.SET_NULL,
-               null=True,
-               blank=True,
-           )
+    logo = models.ImageField(upload_to="images/logo", blank=True)
 
 
     def logo_or_home(self):
